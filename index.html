@@ -14,6 +14,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=277ec7356f8bf4f6177a636b8fba7e02&onload=initKakaoMap"></script>
+<script>
+function initKakaoMap() {
+  var mapContainer = document.getElementById('map');
+  if (!mapContainer) return;
+  var mapOption = { center: new kakao.maps.LatLng(37.2738, 127.1200), level: 4 };
+  var map = new kakao.maps.Map(mapContainer, mapOption);
+  var stationPos = new kakao.maps.LatLng(37.2748, 127.1153);
+  var stationMarker = new kakao.maps.Marker({ position: stationPos, map: map });
+  var stationInfo = new kakao.maps.InfoWindow({
+    content: '<div style="padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap;">🚇 구성역 (GTX·수인분당선)</div>'
+  });
+  stationInfo.open(map, stationMarker);
+  var sitePos = new kakao.maps.LatLng(37.2725, 127.1245);
+  var siteImage = new kakao.maps.MarkerImage(
+    'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
+    new kakao.maps.Size(24, 35)
+  );
+  var siteMarker = new kakao.maps.Marker({ position: sitePos, map: map, image: siteImage });
+  var siteInfo = new kakao.maps.InfoWindow({
+    content: '<div style="padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap;color:#16294d;">📍 플랫폼 시온시티47</div>'
+  });
+  siteInfo.open(map, siteMarker);
+  var polyline = new kakao.maps.Polyline({
+    path: [stationPos, sitePos],
+    strokeWeight: 3, strokeColor: '#b8923d', strokeOpacity: 0.9, strokeStyle: 'dashed'
+  });
+  polyline.setMap(map);
+}
+</script>
 <style>
 :root{
   --navy:#16294d; --navy-deep:#0d1a33; --gold:#b8923d; --gold-soft:#f3ead6;
@@ -138,35 +167,6 @@ footer b{color:rgba(255,255,255,.8)}
       <li><span class="k">학군</span><span>구성초 · 구성중 · 구성고 <b>도보 10분</b> 통학권</span></li>
     </ul>
     <div id="map" style="width:100%;height:220px;border-radius:12px;margin-top:18px;overflow:hidden"></div>
-    <script>
-    function initKakaoMap() {
-      var mapContainer = document.getElementById('map');
-      if (!mapContainer) return;
-      var mapOption = { center: new kakao.maps.LatLng(37.2738, 127.1200), level: 4 };
-      var map = new kakao.maps.Map(mapContainer, mapOption);
-      var stationPos = new kakao.maps.LatLng(37.2748, 127.1153);
-      var stationMarker = new kakao.maps.Marker({ position: stationPos, map: map });
-      var stationInfo = new kakao.maps.InfoWindow({
-        content: '<div style="padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap;">🚇 구성역 (GTX·수인분당선)</div>'
-      });
-      stationInfo.open(map, stationMarker);
-      var sitePos = new kakao.maps.LatLng(37.2725, 127.1245);
-      var siteImage = new kakao.maps.MarkerImage(
-        'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
-        new kakao.maps.Size(24, 35)
-      );
-      var siteMarker = new kakao.maps.Marker({ position: sitePos, map: map, image: siteImage });
-      var siteInfo = new kakao.maps.InfoWindow({
-        content: '<div style="padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap;color:#16294d;">📍 플랫폼 시온시티47</div>'
-      });
-      siteInfo.open(map, siteMarker);
-      var polyline = new kakao.maps.Polyline({
-        path: [stationPos, sitePos],
-        strokeWeight: 3, strokeColor: '#b8923d', strokeOpacity: 0.9, strokeStyle: 'dashed'
-      });
-      polyline.setMap(map);
-    }
-    </script>
     <p style="font-size:.78rem;color:#5b6472;margin-top:8px;text-align:right">지도 데이터: 카카오맵</p>
   </div>
 </section>
