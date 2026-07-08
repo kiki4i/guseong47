@@ -13,15 +13,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
 <style>
 :root{
-  --navy:#16294d; --navy-deep:#0d1a33; --gold:#b8923d; --gold-soft:#f3ead6;
+  --navy:#1a2744; --navy-deep:#101a30; --gold:#c9a961; --gold-light:#ddc48c; --gold-soft:#f5efe0;
   --ink:#1d2433; --mute:#5b6472; --line:#e3e6ec; --bg:#ffffff; --bg-alt:#f6f7fa;
   --alert:#c8402f;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;padding-bottom:76px;word-break:keep-all}
+body{font-family:'Pretendard','Noto Sans KR',-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;padding-bottom:76px;word-break:keep-all}
 .serif{font-family:'Noto Serif KR',serif}
 .wrap{max-width:680px;margin:0 auto;padding:0 20px}
 section{padding:52px 0}
@@ -33,16 +35,48 @@ h2{font-family:'Noto Serif KR',serif;font-size:1.5rem;font-weight:800;line-heigh
 /* ── S1 히어로 ── */
 .hero{position:relative;color:#fff;padding:0}
 .hero-bg{position:absolute;inset:0;background:url('hero.jpg') center 30%/cover no-repeat}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,51,.25) 0%,rgba(13,26,51,.55) 55%,rgba(13,26,51,.92) 100%)}
-.hero-in{position:relative;padding:110px 20px 44px;max-width:680px;margin:0 auto}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,26,48,.35) 0%,rgba(16,26,48,.62) 50%,rgba(16,26,48,.95) 100%)}
+.hero{min-height:100svh;display:flex;align-items:flex-end}
+.hero-in{position:relative;padding:96px 20px 36px;max-width:680px;margin:0 auto;width:100%}
 .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(200,64,47,.92);font-size:.82rem;font-weight:700;padding:7px 14px;border-radius:999px;margin-bottom:18px}
 .badge .dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){.badge .dot{animation:none}}
 .hero h1{font-family:'Noto Serif KR',serif;font-size:1.65rem;font-weight:800;line-height:1.35;margin-bottom:12px}
-.hero h1 .gold{color:#e6c87d}
-.hero .sub{font-size:.95rem;opacity:.92;margin-bottom:24px}
+.hero h1 .gold{color:var(--gold-light)}
+.hero .sub{font-size:.95rem;opacity:.92;margin-bottom:20px}
 .hero .cta{display:block;text-align:center;background:var(--gold);color:#fff;font-size:1.05rem;font-weight:700;padding:16px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.hero-points{list-style:none;margin:0 0 22px;display:flex;flex-direction:column;gap:9px}
+.hero-points li{display:flex;align-items:center;gap:9px;font-size:.87rem;font-weight:500}
+.hero-points .ck{flex:0 0 19px;height:19px;border-radius:50%;background:rgba(221,196,140,.2);color:var(--gold-light);font-size:.68rem;display:flex;align-items:center;justify-content:center;font-weight:800}
+.hero-ctas{display:flex;flex-direction:column;gap:10px}
+.hero-ctas .cta{padding:15px;font-size:1rem}
+.hero-ctas .cta-outline{background:transparent;border:1.5px solid rgba(255,255,255,.65);color:#fff;box-shadow:none}
+
+/* ── S1.5 핵심 지표 ── */
+.stats{border-bottom:1px solid var(--line);padding:36px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 16px}
+.stat{text-align:center}
+.stat .cap{display:block;font-size:.76rem;color:var(--mute);margin-bottom:6px}
+.stat .stat-num{font-family:'Noto Serif KR',serif;font-size:1.7rem;font-weight:800;color:var(--navy)}
+.stat .stat-num .unit{font-size:.95rem;font-weight:700;color:var(--gold);margin-left:2px}
+
+/* ── S1.6 핵심 정보 카드 ── */
+.info-cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px}
+@media (min-width:520px){.info-cards{grid-template-columns:repeat(3,1fr)}}
+.info-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;transition:transform .25s ease,box-shadow .25s ease}
+.info-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(26,39,68,.12)}
+.ic-label{font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.05em;margin-bottom:6px}
+.ic-value{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.ic-sub{font-size:.8rem;color:var(--mute)}
+@media (prefers-reduced-motion:reduce){.info-card{transition:none}.info-card:hover{transform:none}}
+
+/* ── 스크롤 리빌 ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
 
 /* ── S2 위치 ── */
 .qa-title{font-family:'Noto Serif KR',serif;font-size:1.45rem;font-weight:800;color:var(--navy);line-height:1.4}
@@ -55,18 +89,18 @@ h2{font-family:'Noto Serif KR',serif;font-size:1.5rem;font-weight:800;line-heigh
 /* ── S3 가격 비교 ── */
 .price{background:var(--navy);color:#fff}
 .price h2{color:#fff}
-.price .eyebrow{color:#e6c87d}
+.price .eyebrow{color:var(--gold-light)}
 .price .lead{color:rgba(255,255,255,.75)}
 .cmp{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px 20px;margin-bottom:18px}
-.cmp h3{font-size:1.02rem;font-weight:700;margin-bottom:16px;color:#e6c87d}
+.cmp h3{font-size:1.02rem;font-weight:700;margin-bottom:16px;color:var(--gold-light)}
 .bar-row{margin-bottom:14px}
 .bar-row .lbl{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px}
 .bar-row .lbl b{font-size:.95rem}
 .bar{height:26px;border-radius:6px;background:rgba(255,255,255,.18)}
-.bar.ours{background:linear-gradient(90deg,#b8923d,#e6c87d)}
+.bar.ours{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
 .cmp .vs-note{font-size:.8rem;color:rgba(255,255,255,.65);margin-top:4px}
 .convert{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.06);border:1px dashed rgba(230,200,125,.5);border-radius:12px;padding:16px 18px;font-size:.9rem;margin-top:6px}
-.convert b{color:#e6c87d;font-size:1.05rem}
+.convert b{color:var(--gold-light);font-size:1.05rem}
 .free-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .free-tags span{font-size:.82rem;font-weight:500;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px}
 .price .note{color:rgba(255,255,255,.55)}
@@ -107,7 +141,11 @@ footer b{color:rgba(255,255,255,.8)}
 .fixbar{position:fixed;left:0;right:0;bottom:0;display:flex;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,.14);padding-bottom:env(safe-area-inset-bottom)}
 .fixbar a{flex:1;text-align:center;padding:17px 0;font-size:1rem;font-weight:700;text-decoration:none}
 .fixbar .call{background:var(--navy);color:#fff}
-.fixbar .sms{background:#fff;color:var(--navy);border-top:1px solid var(--line)}
+.fixbar .apply-link{background:#fff;color:var(--navy);border-top:1px solid var(--line)}
+@media (min-width:761px){
+  .fixbar{display:none}
+  body{padding-bottom:0}
+}
 
 /* ── S7 상담신청 폼 ── */
 .iform{margin-top:24px;display:flex;flex-direction:column;gap:14px}
@@ -137,12 +175,57 @@ footer b{color:rgba(255,255,255,.8)}
     <span class="badge"><span class="dot"></span>391세대 중 잔여 약 30세대</span>
     <h1>GTX 구성역 걸어서 10분,<br><span class="gold">구성역 플랫폼 시온시티47</span></h1>
     <p class="sub">용인 언남동 379 일원 · 플랫폼시티 인접 · 지상 46층 3개 동<br>월임대료 없는 전세형 민간임대</p>
-    <a class="cta" href="tel:0315399709">📞 오늘 기준 잔여세대 확인하기</a>
+    <ul class="hero-points">
+      <li><span class="ck">✓</span>청약통장 불필요</li>
+      <li><span class="ck">✓</span>보증금 4억~6억 · 월임대료 없음</li>
+      <li><span class="ck">✓</span>10년 후 분양전환 선택</li>
+    </ul>
+    <div class="hero-ctas">
+      <a class="cta" href="tel:0315399709">📞 오늘 기준 잔여세대 확인하기</a>
+      <a class="cta cta-outline" href="#apply">💬 상담 신청하기</a>
+    </div>
   </div>
 </header>
 
+<!-- S1.5 핵심 지표 -->
+<section id="stats" class="stats reveal">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat"><span class="cap">지상 최고층</span><p class="stat-num"><span class="num" data-count="46">0</span><span class="unit">층</span></p></div>
+      <div class="stat"><span class="cap">전체 세대수</span><p class="stat-num"><span class="num" data-count="391">0</span><span class="unit">세대</span></p></div>
+      <div class="stat"><span class="cap">잔여세대</span><p class="stat-num">약 <span class="num" data-count="30">0</span><span class="unit">세대</span></p></div>
+      <div class="stat"><span class="cap">구성역 → 수서역</span><p class="stat-num"><span class="num" data-count="14">0</span><span class="unit">분</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- S1.6 핵심 정보 카드 -->
+<section id="keyinfo" class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">KEY INFO</span>
+    <h2>핵심 정보 한눈에</h2>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-label">보증금</div>
+        <div class="ic-value">4억 ~ 6억</div>
+        <div class="ic-sub">월임대료 없음 · 기준층 기준</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-label">타입</div>
+        <div class="ic-value">59㎡ · 84㎡</div>
+        <div class="ic-sub">2개 평형 구성</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-label">구조</div>
+        <div class="ic-value">지상 46층 · 3개 동</div>
+        <div class="ic-sub">전체 391세대</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- S2 위치 -->
-<section id="location">
+<section id="location" class="reveal">
   <div class="wrap">
     <span class="eyebrow">LOCATION</span>
     <p class="qa-title">"정확히 어디에 짓는 건가요?"</p>
@@ -158,10 +241,25 @@ footer b{color:rgba(255,255,255,.8)}
   </div>
 </section>
 
-<section id="regulation" style="background:#fff8f0;padding:44px 0">
+<!-- S2.5 플랫폼시티 개발 일정 -->
+<section id="platform-timeline" class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">PLATFORM CITY</span>
+    <h2>용인 플랫폼시티,<br>지금 어디까지 왔나</h2>
+    <p class="lead">인접 개발 호재의 진행 상황을 시점 그대로 안내합니다.</p>
+    <div class="timeline">
+      <div class="tl"><span class="d">2025.3</span>플랫폼시티 착공</div>
+      <div class="tl future"><span class="d">2027</span>복합환승센터 착수 계획</div>
+      <div class="tl future"><span class="d">2030</span>플랫폼시티 완공 목표</div>
+    </div>
+    <p class="note">· 플랫폼시티 개발 일정은 사업 시행 상황에 따라 변경될 수 있습니다.</p>
+  </div>
+</section>
+
+<section id="regulation" class="reveal" style="background:#fff8f0;padding:44px 0">
   <div class="wrap">
     <span class="eyebrow" style="color:#c8402f">2026.7.1 NEW</span>
-    <h2 style="color:#16294d">용인 기흥구, 정부가 직접<br>규제로 묶었습니다</h2>
+    <h2 style="color:var(--navy)">용인 기흥구, 정부가 직접<br>규제로 묶었습니다</h2>
     <p class="lead">집값 과열이 심각하다고 정부가 공식 판단한 지역입니다. 역설적으로, 이 지역에서 규제를 받지 않는 선택지가 하나 있습니다.</p>
     <div style="display:grid;gap:10px;margin-top:4px">
       <div style="background:#fff;border:1px solid #e3e6ec;border-radius:12px;padding:16px 18px">
@@ -172,8 +270,8 @@ footer b{color:rgba(255,255,255,.8)}
         <div style="font-weight:700;color:#c8402f;margin-bottom:4px;font-size:.92rem">📌 2026년 7월 5일부로 지정</div>
         <p style="font-size:.9rem;color:#1d2433">경기도 <b>토지거래허가구역</b> 지정 (아파트 한정, 2027년 12월까지) — 계약 전 구청장 허가 필수, 2년 실거주 의무</p>
       </div>
-      <div style="background:#16294d;border-radius:12px;padding:16px 18px">
-        <div style="font-weight:700;color:#e6c87d;margin-bottom:6px;font-size:.92rem">✅ 장기전세 민간임대는 규제 대상 외</div>
+      <div style="background:var(--navy);border-radius:12px;padding:16px 18px">
+        <div style="font-weight:700;color:var(--gold-light);margin-bottom:6px;font-size:.92rem">✅ 장기전세 민간임대는 규제 대상 외</div>
         <p style="font-size:.9rem;color:rgba(255,255,255,.85)">시온시티47은 분양 아파트가 아닌 <b>민간임대</b>로, 토지거래허가 불필요 · 청약 불필요 · 취득세 없음. 규제가 강화될수록 임대 주거의 가치가 높아집니다.</p>
       </div>
     </div>
@@ -182,7 +280,7 @@ footer b{color:rgba(255,255,255,.8)}
 </section>
 
 <!-- S3 가격 비교 -->
-<section class="price" id="price">
+<section class="price reveal" id="price">
   <div class="wrap">
     <span class="eyebrow">PRICE</span>
     <h2>지금 구성역 주변,<br>얼마인지 아십니까?</h2>
@@ -230,7 +328,7 @@ footer b{color:rgba(255,255,255,.8)}
 </section>
 
 <!-- S4 신뢰 -->
-<section id="trust">
+<section id="trust" class="reveal">
   <div class="wrap">
     <span class="eyebrow">TRUST</span>
     <p class="qa-title">"토지 확보는요? 인허가는요?"</p>
@@ -257,7 +355,7 @@ footer b{color:rgba(255,255,255,.8)}
 </section>
 
 <!-- S5 구조 -->
-<section id="how" style="padding-top:0">
+<section id="how" class="reveal" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">PROCESS</span>
     <h2>10년 살아보고, 그때 결정합니다</h2>
@@ -273,7 +371,7 @@ footer b{color:rgba(255,255,255,.8)}
 </section>
 
 <!-- S6 마감 -->
-<section class="urgency">
+<section class="urgency reveal">
   <div class="wrap">
     <p class="count">잔여 약 30<small> 세대</small></p>
     <p class="lead" style="margin-bottom:0">2024년 11월 모집 시작 — 남은 동·호수는 매일 달라집니다.<br>오늘 기준 현황은 전화로 바로 확인하세요.</p>
@@ -283,7 +381,7 @@ footer b{color:rgba(255,255,255,.8)}
 </section>
 
 <!-- S7 상담신청 -->
-<section id="apply" style="background:var(--bg-alt)">
+<section id="apply" class="reveal" style="background:var(--bg-alt)">
   <div class="wrap">
     <span class="eyebrow">CONSULTATION</span>
     <h2>전화가 어려우시면,<br>상담 신청을 남겨주세요</h2>
@@ -339,8 +437,8 @@ footer b{color:rgba(255,255,255,.8)}
 
 <!-- S0 하단 고정바 -->
 <nav class="fixbar">
-  <a class="call" href="tel:0315399709">📞 전화상담</a>
-  <a class="sms" href="sms:01053056804?body=시온시티47 잔여세대 문의드립니다">💬 문자문의</a>
+  <a class="call" href="tel:0315399709">📞 전화하기</a>
+  <a class="apply-link" href="#apply">💬 상담신청</a>
 </nav>
 
 <script>
@@ -393,6 +491,56 @@ footer b{color:rgba(255,255,255,.8)}
       errEl.style.display = 'block';
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ revealIO.observe(el); });
+  }
+
+  var nums = document.querySelectorAll('.num[data-count]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if(reduceMotion){ el.textContent = target; return; }
+    var duration = 900;
+    var start = null;
+    function step(ts){
+      if(start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if(progress < 1){ requestAnimationFrame(step); }
+      else { el.textContent = target; }
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var countIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateCount(entry.target);
+          countIO.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.5});
+    nums.forEach(function(el){ countIO.observe(el); });
+  } else {
+    nums.forEach(function(el){ el.textContent = el.getAttribute('data-count'); });
+  }
 })();
 </script>
 
