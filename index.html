@@ -497,6 +497,11 @@ footer b{color:rgba(255,255,255,.8)}
         _nasa["cnv"] = wcs.cnv("4", "1"); // 유형4: 신청·예약
         wcs_do(_nasa);
       }
+      if (window.wcs && typeof wcs.trans === 'function') {
+        var _conv = {};
+        _conv.type = 'lead';
+        wcs.trans(_conv);
+      }
     }).catch(function(){
       submitBtn.disabled = false;
       submitBtn.textContent = '상담 신청하기 (연락드립니다)';
@@ -563,6 +568,7 @@ footer b{color:rgba(255,255,255,.8)}
 if (!window.wcs_add) var wcs_add = {};
 wcs_add["wa"] = "s_58621b88aa0e";
 if (window.wcs) {
+  wcs.inflow("guseong47.com");
   wcs_do();
 }
 </script>
