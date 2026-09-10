@@ -113,7 +113,15 @@ h2{font-family:'Noto Serif KR',serif;font-size:1.5rem;font-weight:800;line-heigh
 .tcard .th .chk{flex:0 0 22px;height:22px;border-radius:50%;background:var(--gold-soft);color:var(--gold);font-size:.8rem;display:flex;align-items:center;justify-content:center;font-weight:800}
 .tcard p{font-size:.88rem;color:var(--mute)}
 .tcard p b{color:var(--ink)}
+.photo-card{padding:0;overflow:hidden}
+.tcard-photo{width:100%;height:150px;object-fit:cover;display:block}
+.photo-card .th{padding:14px 20px 0;margin-bottom:0}
+.photo-card p{padding:6px 20px 18px}
+.th .yr{font-weight:700;font-size:.72rem;color:var(--gold);background:var(--gold-soft);border-radius:20px;padding:3px 10px;margin-left:8px;white-space:nowrap}
 .timeline{margin-top:26px;border-left:2px solid var(--gold);padding-left:20px}
+.official-doc{margin-top:24px;border:1px solid var(--line);border-radius:12px;padding:16px;background:#fafafa}
+.doc-full-img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.official-doc .note{margin-top:12px}
 .timeline .tl{position:relative;padding-bottom:18px;font-size:.9rem}
 .timeline .tl::before{content:'';position:absolute;left:-25.5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
 .timeline .tl.future::before{background:#fff;border:2px solid var(--gold)}
@@ -292,18 +300,18 @@ footer b{color:rgba(255,255,255,.8)}
   <div class="wrap">
     <span class="eyebrow">PRICE</span>
     <h2>지금 구성역 주변,<br>얼마인지 아십니까?</h2>
-    <p class="lead">국토교통부 실거래가 기준, 인근 동일 단지와 직접 비교해 드립니다.</p>
+    <p class="lead">인근 동일 단지의 현재 매물 시세와 직접 비교해 드립니다.</p>
 
     <div class="cmp">
       <h3>84타입(39평형) 비교</h3>
       <div class="bar-row">
-        <div class="lbl"><span>인근 e편한세상 구성역 매매 실거래</span><b>15억 4천</b></div>
+        <div class="lbl"><span>인근 e편한세상 구성역 매물 시세</span><b>15억 9천~17억 8천</b></div>
         <div class="bar" style="width:100%"></div>
-        <p class="vs-note" style="margin-top:2px">2026년 5월 23일 실거래 기준</p>
+        <p class="vs-note" style="margin-top:2px">2026년 9월 10일 확인 매물 기준(84A·84C타입)</p>
       </div>
       <div class="bar-row" style="margin-top:12px">
         <div class="lbl"><span>시온시티47 임대보증금 (기준층)</span><b>6억</b></div>
-        <div class="bar ours" style="width:39%"></div>
+        <div class="bar ours" style="width:34%"></div>
         <p class="vs-note" style="margin-top:2px">월임대료 없음 · 취득세·종부세 없음</p>
       </div>
       <div class="convert" style="margin-top:14px">
@@ -314,13 +322,13 @@ footer b{color:rgba(255,255,255,.8)}
     <div class="cmp">
       <h3>59타입(28평형) 비교</h3>
       <div class="bar-row">
-        <div class="lbl"><span>인근 e편한세상 구성역 매매 실거래</span><b>12억 1,500</b></div>
+        <div class="lbl"><span>인근 e편한세상 구성역 매물 시세</span><b>11억대~12억대</b></div>
         <div class="bar" style="width:100%"></div>
-        <p class="vs-note" style="margin-top:2px">2026년 5월 1일 실거래 기준</p>
+        <p class="vs-note" style="margin-top:2px">2026년 8월 기준 시세(24평형 환산)</p>
       </div>
       <div class="bar-row" style="margin-top:12px">
         <div class="lbl"><span>시온시티47 임대보증금 (기준층)</span><b>4억</b></div>
-        <div class="bar ours" style="width:33%"></div>
+        <div class="bar ours" style="width:35%"></div>
         <p class="vs-note" style="margin-top:2px">월임대료 없음 · 취득세·종부세 없음</p>
       </div>
       <div class="convert" style="margin-top:14px">
@@ -331,7 +339,7 @@ footer b{color:rgba(255,255,255,.8)}
     <div class="free-tags">
       <span>청약통장 불필요</span><span>만 19세 이상 누구나</span><span>거주기간 취득세 없음</span><span>종부세·재산세 없음</span>
     </div>
-    <p class="note">· 실거래가 출처: 국토교통부 실거래가 공개시스템. 인근 e편한세상 구성역 플랫폼시티(2024년 입주) 기준.<br>· 시온시티47 보증금은 기준층 기준이며 층·향에 따라 다릅니다. 매매가와 임대보증금은 거래 조건이 다른 별개의 가격입니다.<br>· 분양전환 가격 및 조건은 계약서 기준이며 관련 법령과 사업 일정에 따라 변경될 수 있습니다.</p>
+    <p class="note">· 시세 출처: 네이버부동산 매물 정보(확인일 기준). 인근 e편한세상 구성역 플랫폼시티(2024년 입주) 기준이며, 실거래가와는 차이가 있을 수 있습니다.<br>· 시온시티47 보증금은 기준층 기준이며 층·향에 따라 다릅니다. 매매가와 임대보증금은 거래 조건이 다른 별개의 가격입니다.<br>· 분양전환 가격 및 조건은 계약서 기준이며 관련 법령과 사업 일정에 따라 변경될 수 있습니다.</p>
   </div>
 </section>
 
@@ -353,12 +361,43 @@ footer b{color:rgba(255,255,255,.8)}
     </div>
     <div class="timeline">
       <div class="tl"><span class="d">2024.12</span>지구단위계획 결정고시<span class="tag">용인 민간임대 최초</span></div>
-      <div class="tl"><span class="d">2025.09</span>건축 통합심의 통과</div>
-      <div class="tl"><span class="d">2026.07</span>사업계획승인 접수 (도면 변경 재접수)</div>
-      <div class="tl future"><span class="d">2027</span>착공 예정</div>
-      <div class="tl future"><span class="d">2030</span>입주 예정</div>
+      <div class="tl"><span class="d">2025.09</span>건축 통합심의 조건부의결</div>
+      <div class="tl"><span class="d">2026.01</span>임대주택사업계획승인 최초 신청</div>
+      <div class="tl"><span class="d">2026.08</span>도면 변경 반영·주택건설사업계획승인 정식 접수 (용인시 공동주택과)</div>
+      <div class="tl future"><span class="d">2026.12</span>사업계획승인 목표</div>
+      <div class="tl future"><span class="d">2027.04</span>착공 예정</div>
+      <div class="tl future"><span class="d">2030.06</span>입주 예정</div>
     </div>
-    <p class="note">· 사업 일정은 인허가 진행 상황에 따라 조정될 수 있습니다.</p>
+    <p class="note">· 사업계획승인은 2026.08.07 정식 접수되었으며(법정 처리기한 60일, 2026.11.05), 사업 일정은 인허가 진행 상황에 따라 조정될 수 있습니다.</p>
+
+    <div class="official-doc">
+      <a href="assets/yongin-notice-202608-highlighted.png" target="_blank" rel="noopener">
+        <img src="assets/yongin-notice-202608-highlighted.png" alt="용인시 민간임대아파트 피해예방 안내문 2026년 8월 기준, 구성역 플랫폼 시온시티47 항목 강조" class="doc-full-img">
+      </a>
+      <p class="note">· 용인시 「민간임대아파트 사업 관련 피해예방(유의사항) 안내문」(2026.08.27 기준) 원문입니다(클릭 시 확대). <b>다른 사업지들 대부분이 "지구단위계획 미수립"에 머물러 있는 것과 달리, 표 7번 구성역 플랫폼 시온시티47은 지구단위계획 결정을 마치고 2026.08.07 주택건설사업계획승인까지 정식 접수된 상태임을 용인시가 직접 확인해 드립니다.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- S4b 인근 민간임대 사례 -->
+<section id="proof" class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">PROOF</span>
+    <p class="qa-title">"임대인데, 나중에 정말 오르나요?"</p>
+    <p class="lead">먼저 공급된 인근 민간임대 단지들의 실제 시세 변화입니다.</p>
+    <div class="trust-cards">
+      <div class="tcard photo-card">
+        <img src="assets/hybel-photo.jpg" alt="수지구청역 롯데캐슬 하이브엘 전경" class="tcard-photo">
+        <div class="th">수지구청역 롯데캐슬 하이브엘 <span class="yr">입주 2년차</span></div>
+        <p>확정분양가(전세형 84형) <b>14.5억</b> → 현재 매물 시세 <b>18억대</b><br>전매 프리미엄 약 <b>4억</b></p>
+      </div>
+      <div class="tcard photo-card">
+        <img src="assets/pungyeongchae-photo.jpg" alt="광교풍경채어바니티 전경" class="tcard-photo">
+        <div class="th">광교풍경채어바니티 <span class="yr">입주 4년차</span></div>
+        <p>분양가(84형) <b>9억대</b> → 현재 매물 시세 <b>11억대</b><br>전매 프리미엄 약 <b>2억</b></p>
+      </div>
+    </div>
+    <p class="note">· 시세는 네이버부동산 매물 호가(2026.09.10 확인) 기준이며, 실거래가와 다를 수 있습니다. 확정분양가는 각 단지 최초 모집공고 기준입니다. 개별 동·호수·층·시점에 따라 차이가 있을 수 있습니다.</p>
   </div>
 </section>
 
@@ -370,8 +409,8 @@ footer b{color:rgba(255,255,255,.8)}
     <p class="lead">청약 경쟁 없이 계약하고, 거주해 본 뒤 분양전환을 선택하는 구조입니다.</p>
     <div class="flow">
       <div class="step"><b>계약</b><span>청약통장 불필요 · 만 19세 이상 누구나</span></div>
-      <div class="step"><b>2027</b><span>착공 예정</span></div>
-      <div class="step"><b>2030</b><span>입주 예정</span></div>
+      <div class="step"><b>2027.04</b><span>착공 예정</span></div>
+      <div class="step"><b>2030.06</b><span>입주 예정</span></div>
       <div class="step"><b>10년</b><span>월임대료 없이 거주</span></div>
       <div class="step hl"><b>전환</b><span>분양전환 우선권 — 거주기간 취득세·종부세 없음</span></div>
     </div>
@@ -438,7 +477,9 @@ footer b{color:rgba(255,255,255,.8)}
   <div class="wrap">
     <p><b>구성역 플랫폼 시온시티47</b> · 용인 언남지구 C6·C7 주상복합</p>
     <p>시행: 시온시티플랜㈜ · 시공예정: HL디앤아이한라㈜(에피트) · 신탁: 무궁화신탁</p>
-    <p style="margin-top:10px">본 페이지는 상담사 개인 안내 페이지입니다. 상담: 정재우 031-539-9709</p>
+    <p style="margin-top:10px">본 페이지는 상담사 개인 안내 페이지입니다. 상담: 정재우 031-539-9709 · 010-5305-6804</p>
+    <p>홍보관: 경기도 용인시 기흥구 구성로 357 용인테크노밸리 지식산업센터 A동 210·211호 (2026.09.10 이전 개관)</p>
+    <p>블로그: <a href="https://blog.naver.com/cluster512" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">blog.naver.com/cluster512</a></p>
     <p style="margin-top:10px">기재된 내용(세대수·층수·일정·CG 등)은 사업 인허가 과정에서 변경될 수 있으며, 계약 전 반드시 공식 계약 서류를 확인하시기 바랍니다.</p>
   </div>
 </footer>
